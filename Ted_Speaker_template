@@ -1,0 +1,327 @@
+{%- macro infobox(speaker_name,Image,Description,DOB,Gender,citizenship,Ted_speaker_Id,talk_id,talk_name,talk_description,duration,video_type_name,event,speaker_id,speaker_who_he_is,speaker_why_listen,speaker_is_published,all_speaker_details,is_talk_featured,has_talk_citation,talks_tags,language,native_language,url_video,url_photo_talk,url_photo_speaker,related_talks) -%}
+
+{%- if Image == 'nan' -%}
+	{%- set Image='' -%}
+{%- endif -%}
+
+{%- if Description == 'nan' -%}
+    {%- set Description='' -%}
+{%- endif -%}
+
+{%- if DOB == 'nan' -%}
+    {%- set DOB='' -%}
+{%- endif -%}
+
+{%- if Gender == 'nan' -%}
+	{%- set Gender ='' -%}
+{%- endif -%}
+
+{%- if citizenship == 'nan' -%}
+	{%- set citizenship ='' -%}
+{%- endif -%}
+
+{%- if Ted_speaker_Id == 'nan' -%}
+	{%- set Ted_speaker_Id ='' -%}
+{%- endif -%}
+
+{%- if talk_id == 'nan' -%}
+	{%- set talk_id ='' -%}
+{%- endif -%}
+
+{%- if talk_name == 'nan' -%}
+	{%- set talk_name ='' -%}
+{%- endif -%}
+
+{%- if talk_description == 'nan' -%}
+	{%- set talk_description ='' -%}
+{%- endif -%}
+
+{%- if duration == 'nan' -%}
+	{%- set duration ='' -%}
+{%- endif -%}
+
+{%- if video_type_name == 'nan' -%}
+	{%- set video_type_name ='' -%}
+{%- endif -%}
+
+{%- if event== 'nan' -%}
+	{%- set event='' -%}
+{%- endif -%}
+
+{%- if speaker_id == 'nan' -%}
+	{%- set speaker_id ='' -%}
+{%- endif -%}
+
+{%- if speaker_who_he_is == 'nan' -%}
+	{%- set speaker_who_he_is ='' -%}
+{%- endif -%}
+
+{%- if speaker_why_listen == 'nan' -%}
+	{%- set leadership ='' -%}
+{%- endif -%}
+
+{%- if speaker_is_published== 'nan' -%}
+	{%- set speaker_is_published ='' -%}
+{%- endif -%}
+
+{%- if all_speaker_details == 'nan' -%}
+	{%- set all_speaker_details ='' -%}
+{%- endif -%}
+
+{%- if is_talk_featured == 'nan' -%}
+	{%- set is_talk_featured ='' -%}
+{%- endif -%}
+
+{%- if has_talk_citation == 'nan' -%}
+	{%- set has_talk_citation='' -%}
+{%- endif -%}
+
+{%- if talks_tags == 'nan' -%}
+	{%- set talks_tags ='' -%}
+{%- endif -%}
+
+{%- if language == 'nan' -%}
+	{%- set language='' -%}
+{%- endif -%}
+
+{%- if native_language== 'nan' -%}
+	{%- set native_language ='' -%}
+{%- endif -%}
+
+{%- if url_video == 'nan' -%}
+	{%- set curl_video ='' -%}
+{%- endif -%}
+
+{%- if url_photo_talk== 'nan' -%}
+	{%- set url_photo_talk ='' -%}
+{%- endif -%}
+
+{%- if url_photo_speaker == 'nan' -%}
+	{%- set url_photo_speaker ='' -%}
+{%- endif -%}
+
+{%- if related_talks == 'nan' -%}
+	{%- set related_talks ='' -%}
+{%- endif -%}
+
+{{'{{Infobox '}}
+| bodystyle = width:25em;text-align:center;
+| abovestyle = background-color:#cfc;
+| headerstyle = background-color:#ccf;text-align:center;
+| labelstyle = background-color:#ddf; width:20%;text-align:left;
+| title = {{name}}
+| label1 =	చిత్రం 
+| image = {{Image}}
+| image_size = 300
+| label2 = వివరణ
+| data2 = {{Description}}
+| label3 = పుట్టిన_తేది
+| data3 = {{DOB}}
+| label4 = లింగం
+| data4 = {{Gender}}
+| label5 =  పౌరసత్వం
+| data5 = {{citizenship}}
+| label6 = టెడ్_స్పీకర్_ఐడి
+| data6 = {{Ted_speaker_Id}}
+| label7 = చర్చ_ఐడి
+| data7 = {{talk_id}}
+| label8 = చర్చ_పేరు
+| data8 = {{talk_name}}
+| label10 = వ్యవధి
+| data10 = {{duration }} 
+| label11 = వీడియో_రకం_పేరు
+| data11 = {{video_type_name}}
+| label12 = ఈవెంట్ 
+| data12 = {{event}}
+| label13 =  స్పీకర్_ఐడి
+| data13 = {{speaker_id}}
+| label18 = టాక్_ఫీచర్ చేయబడింది
+| data18 = {{is_talk_featured}}
+| label19 = అనులేఖనం
+| data19 = {{has_talk_citation}}
+| label20 = స్థానిక_భాష
+| data20 = {{native_language}}
+| label21 = భాష
+| data21 = {{language}} 
+    {{'}}\n'}}
+{%- endmacro -%}
+
+{%- macro intro(speaker_name,speaker_id,DOB,citizenship,talk_id,talk_name) -%}
+{{name}}
+{# ##}
+{{"==వక్త=="}}
+{# ##}
+
+{%- set lineDA = [
+		speaker_name +"ప్రముఖ TED స్పీకర్  ",speaker_name +"ప్రముఖ TED స్పీకర్  "
+					   ] | random
+-%}
+{%- set lineD = [
+				      speaker_name +"యొక్క  TED స్పీకర్ ఐడి: "+speaker_id ,speaker_name +"యొక్క  TED స్పీకర్ ఐడి: "
+					  ] | random
+-%}
+{%- set lineA = [speaker_name+DOB+" న " +"జన్మించారు .", ""+speaker_name+" జన్మించిన తేదీ"+DOB+"."]|random  -%}
+ 
+{%- if  speaker_name != 'nan' -%}
+{{lineDA}}
+{%- endif -%}
+{%- if speaker_name != 'nan' and speaker_id!='nan' -%}
+{{lineD}}
+{%- endif -%}
+{%- if speaker_name != 'nan' and DOB != 'nan' -%}
+{{lineA}}
+{%- endif -%}
+	
+{%- set lineMP = [speaker_name+citizenship+"దేశానికి చెందినవారు.",""+speaker_name+citizenship+"పౌరసత్వం "+DOB+"."] | random-%}
+
+{%- if citizenship != 'nan'-%}
+{{lineMP}}
+{%- endif -%}
+{%- if talk_id != 'nan' -%}
+{{lineM}}
+{%- endif -%}
+{%- if talk_name != 'nan' -%}
+{{lineP}}
+{%- endif -%}
+	
+{%- endmacro -%}
+
+
+{%- macro history(talk_name,talk_description,duration,video_type_name, event,Description ) -%}
+{%- if type == 'nan' -%}
+{%- set type ='' -%}
+{%- endif -%}
+ 
+{%- set linep =  "ఈ వక్త యొక్క వృత్తి"+Description+"." -%}
+{%- if Description != 'nan' -%}
+{{linep}}
+{%- endif -%}
+ 	
+{%- endmacro -%}
+
+
+
+{%- macro construction(speaker_who_he_is, event ,video_type_name,duration,talk_id,talk_name,speaker_is_published,talk_description,is_talk_featured,language,has_talk_citation,native_language) -%}
+{%- if type == 'nan' -%}
+{%- set type ='' -%}
+{%- endif -%}
+	
+{%- set lineS = "ఈ వక్త యొక్క ప్రాముఖ్యత"+speaker_who_he_is+"."-%}
+{%- if speaker_who_he_is != 'nan' -%}
+{{lineS}}
+{%- endif -%}
+	
+{# ##}
+{{"==టెడ్ గురించి వివరాలు==\n"}}
+{# ##}
+ 
+{# ##}
+"టెడ్ అనేది ప్రపంచవ్యాప్త సంఘం, ఇది ప్రపంచం గురించి మెరుగైన జ్ఞానాన్ని పెంచుకోవాలి అనుకునే అన్ని విభాగాలు మరియు సంస్కృతులకు చెందిన వ్యక్తులను ఆహ్వానిస్తుంది. ఆలోచనలు వైఖరులు, జీవితాలు మరియు చివరికి ప్రపంచాన్ని మార్చే శక్తిని టెడ్ బలంగా విశ్వసిస్తుంది. TED.COMలో, ప్రపంచంలోని అత్యంత స్పూర్తిదాయకమైన ఆలోచనాపరుల నుండి ముఖ్యమైన సమాచారం అలాగే ప్రపంచవ్యాప్తంగా ఆన్‌లైన్ మరియు టెడ్ ఈవెంట్‌లలో ఒకరినొకరు కలుసుకోవడానికి ఆసక్తిగల మనస్సుల సమూహం ఉంది."
+{# ##}
+ 
+ {# ##}
+{{"==ప్రసంగం వివరాలు==\n"}}
+{# ##}
+{%- set lineM = ["వక్త యొక్క టాక్  ఐడి"+ talk_id,""+ talk_id+"వక్త యొక్క టాక్  ఐడి"]|random  -%}
+{%- set lineP = ["వక్త యొక్క టాక్  పేరు"+ talk_name,""+talk_name+"వక్త యొక్క టాక్ పేరు"]|random   -%}
+{%- set lineGB = [talk_name+"యొక్క సారాంశం" +talk_description,""+talk_description+"ఈ టాక్ యొక్క సారాంశం" ] | random-%}
+{%- if talk_description != 'nan' -%}
+{{lineGB}}
+{%- endif -%}
+	
+{%- set lineC = "ఈ ప్రసంగం యొక్క వ్యవధి" + duration -%}
+{%- if duration != 'nan' -%}
+{{lineC}}
+{%- endif -%}
+	
+{%- set lineG1 ="ఈ ప్రసంగం"+video_type_name+ "లో ఇవ్వబడింది."-%}
+{%- if video_type_name != 'nan' -%}
+{{lineG1}}
+{%- endif -%}
+	
+	
+{%- set lineL =  "ఈ ప్రసంగం"+event+"సన్నివేశంలో ఇవ్వబడింది." -%}
+{%- if event != 'nan' -%}
+{{lineL}}
+{%- endif -%}
+	
+{%- set lineA = "ఈ వక్త యొక్క చర్చ ప్రచురించబడింది." -%}
+{%- if speaker_is_published != 'nan' and speaker_is_published ==1 -%}
+	{{lineA}}
+{%- endif -%}
+	
+
+{%- set lineC = "ఈ వక్త యొక్క చర్చ ఫీచర్ చేయబడింది."-%}
+{%- if is_talk_featured != 'nan' and is_talk_featured=='TRUE' -%}
+{{lineC}}
+{%- endif -%}
+	
+{%- set linela = "ఈ చర్చ ఆంగ్ల భాషలో ఇవ్వబడింది." -%}
+{%- if language!="nan" and language=="en" -%}
+{{linela}}
+{%- endif -%}
+
+{%- set lineCi = "ఈ వక్త యొక్క చర్చకు అనులేఖనం ఉంది." -%}
+{%- if has_talk_citation!= 'nan' and has_talk_citation==1 -%}
+{{lineCi}}
+{%- endif -%}
+ 
+{%- set linen = "ఈ వక్త యొక్క స్థానిక భాష ఆంగ్లం."-%}
+{%- if native_language!= 'nan' and native_language=="en" -%}
+{{linen}}
+{%- endif -%}	
+{%- endmacro -%}
+
+
+{%- macro bottomSection(url_video,url_photo_talk,url_photo_speaker,related_talks) -%}
+
+{%- if url_video != 'nan' -%}
+{# ##}
+{{"==ప్రస్తావనలు==\n"}}
+{# ##}
+
+		
+{%- set refList = url_video-%}
+{% for item in refList -%}
+{{ item }}
+{%- endfor -%} 
+{%- endif -%}
+	
+	
+{%- if url_photo_talk != 'nan' -%}
+{# ##}
+{{"== లింకులు==\n"}}
+{# ##}
+
+		
+{%- set linen = url_photo_talk-%}
+{%- endif -%}
+ 
+{%- if url_photo_talk!= 'nan'-%}
+{{linen}}
+{%- endif -%}	
+
+{%- if url_photo_speaker!= 'nan'-%}
+{{linen}}
+{%- endif -%}
+
+{#%- if related_talks != 'nan' -%#}
+{# ##}
+{#{"==వర్గం==\n"}#}
+{# ##}
+{#%- set catList = related_talks -%#}
+{#% for item in catList -%#}
+{#{ item }#}
+{# ##}
+{#%- endfor -%#}
+{#%- endif -%#}	
+
+{%- endmacro -%}
+
+
+{{-infobox(speaker_name,Image,Description,DOB,Gender,citizenship,Ted_speaker_Id,talk_id,talk_name,talk_description,duration,video_type_name,event,speaker_id,speaker_who_he_is,speaker_why_listen,speaker_is_published,all_speaker_details,is_talk_featured,has_talk_citation,talks_tags,language,native_language,url_video,url_photo_talk,url_photo_speaker,related_talks) }}
+
+{{ intro(speaker_name,speaker_id,DOB,citizenship,talk_id,talk_name) }}
+{{ history(talk_name,talk_description,duration,video_type_name, event,Description) }}
+{{ construction(speaker_who_he_is,event, speaker_is_published,is_talk_featured,language,has_talk_citation,native_language, talk_description) }}
+{{ bottomSection(url_video,url_photo_talk,url_photo_speaker,related_talks) -}}
